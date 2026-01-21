@@ -3,6 +3,7 @@ package test
 import (
 	"testing"
 
+	"github.com/stretchr/testify/assert"
 	helper "github.com/cloudposse/test-helpers/pkg/atmos/component-helper"
 )
 
