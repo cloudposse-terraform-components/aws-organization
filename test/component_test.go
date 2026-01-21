@@ -10,18 +10,19 @@ type ComponentSuite struct {
 	helper.TestSuite
 }
 
-//func (s *ComponentSuite) TestBasic() {
-//	const component = "example/basic"
-//	const stack = "default-test"
-//	const awsRegion = "us-east-2"
-//
-//	defer s.DestroyAtmosComponent(s.T(), component, stack, nil)
-//	options, _ := s.DeployAtmosComponent(s.T(), component, stack, nil)
-//	assert.NotNil(s.T(), options)
-//
-//	s.DriftTest(component, stack, nil)
-//}
-//
+func (s *ComponentSuite) TestBasic() {
+	s.T().Skipf("skipping TestBasic: %s", "test not yet implemented")
+	
+	const component = "example/basic"
+	const stack = "default-test"
+	const awsRegion = "us-east-2"
+
+	defer s.DestroyAtmosComponent(s.T(), component, stack, nil)
+	options, _ := s.DeployAtmosComponent(s.T(), component, stack, nil)
+	assert.NotNil(s.T(), options)
+
+	s.DriftTest(component, stack, nil)
+}
 
 func (s *ComponentSuite) TestEnabledFlag() {
 	const component = "example/disabled"
