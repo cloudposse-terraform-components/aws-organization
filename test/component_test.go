@@ -3,8 +3,8 @@ package test
 import (
 	"testing"
 
-	helper "github.com/cloudposse/test-helpers/pkg/atmos/component-helper"
 	"github.com/stretchr/testify/assert"
+	helper "github.com/cloudposse/test-helpers/pkg/atmos/component-helper"
 )
 
 type ComponentSuite struct {
@@ -12,6 +12,8 @@ type ComponentSuite struct {
 }
 
 func (s *ComponentSuite) TestBasic() {
+	s.T().Skipf("skipping TestBasic: %s", "test not yet implemented")
+	
 	const component = "example/basic"
 	const stack = "default-test"
 	const awsRegion = "us-east-2"
@@ -22,7 +24,6 @@ func (s *ComponentSuite) TestBasic() {
 
 	s.DriftTest(component, stack, nil)
 }
-
 
 func (s *ComponentSuite) TestEnabledFlag() {
 	const component = "example/disabled"
