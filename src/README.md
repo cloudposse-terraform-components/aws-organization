@@ -163,5 +163,5 @@ This component is part of a suite of single-resource components for AWS Organiza
 
 
 
-[<img src="https://cloudposse.com/logo-300x69.svg" alt="CloudPosse logo" height="32" align="right"/>](https://cpco.io/homepage?utm_source=github&utm_medium=readme&utm_campaign=cloudposse-terraform-components/aws-organization&utm_content=)
+[<img src="https://cloudposse.com/logo-300x69.svg" height="32" align="right"/>](https://cpco.io/homepage?utm_source=github&utm_medium=readme&utm_campaign=cloudposse-terraform-components/aws-organization&utm_content=)
 
