@@ -25,3 +25,9 @@ variable "feature_set" {
     error_message = "feature_set must be one of: ALL, CONSOLIDATED_BILLING"
   }
 }
+
+variable "organization_enabled_features" {
+  type        = list(string)
+  description = "List of IAM features to enable. Valid values are 'RootCredentialsManagement' and 'RootSessions'. Set to empty list to disable."
+  default     = []
+}
