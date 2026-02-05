@@ -105,6 +105,7 @@ This component is part of a suite of single-resource components for AWS Organiza
 
 | Name | Type |
 |------|------|
+| [aws_iam_organizations_features.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_organizations_features) | resource |
 | [aws_organizations_organization.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_organization) | resource |
 
 ## Inputs
@@ -129,6 +130,7 @@ This component is part of a suite of single-resource components for AWS Organiza
 | <a name="input_labels_as_tags"></a> [labels\_as\_tags](#input\_labels\_as\_tags) | Set of labels (ID elements) to include as tags in the `tags` output.<br/>Default is to include all labels.<br/>Tags with empty values will not be included in the `tags` output.<br/>Set to `[]` to suppress all generated tags.<br/>**Notes:**<br/>  The value of the `name` tag, if included, will be the `id`, not the `name`.<br/>  Unlike other `null-label` inputs, the initial setting of `labels_as_tags` cannot be<br/>  changed in later chained modules. Attempts to change it will be silently ignored. | `set(string)` | <pre>[<br/>  "default"<br/>]</pre> | no |
 | <a name="input_name"></a> [name](#input\_name) | ID element. Usually the component or solution name, e.g. 'app' or 'jenkins'.<br/>This is the only ID element not also included as a `tag`.<br/>The "name" tag is set to the full `id` string. There is no tag with the value of the `name` input. | `string` | `null` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | ID element. Usually an abbreviation of your organization name, e.g. 'eg' or 'cp', to help ensure generated IDs are globally unique | `string` | `null` | no |
+| <a name="input_organization_enabled_features"></a> [organization\_enabled\_features](#input\_organization\_enabled\_features) | List of IAM features to enable. Valid values are 'RootCredentialsManagement' and 'RootSessions'. Set to empty list to disable. | `list(string)` | `[]` | no |
 | <a name="input_regex_replace_chars"></a> [regex\_replace\_chars](#input\_regex\_replace\_chars) | Terraform regular expression (regex) string.<br/>Characters matching the regex will be removed from the ID elements.<br/>If not set, `"/[^a-zA-Z0-9-]/"` is used to remove all characters other than hyphens, letters and digits. | `string` | `null` | no |
 | <a name="input_region"></a> [region](#input\_region) | AWS Region | `string` | n/a | yes |
 | <a name="input_stage"></a> [stage](#input\_stage) | ID element. Usually used to indicate role, e.g. 'prod', 'staging', 'source', 'build', 'test', 'deploy', 'release' | `string` | `null` | no |
@@ -144,6 +146,7 @@ This component is part of a suite of single-resource components for AWS Organiza
 | <a name="output_master_account_id"></a> [master\_account\_id](#output\_master\_account\_id) | The ID of the master account |
 | <a name="output_non_master_accounts"></a> [non\_master\_accounts](#output\_non\_master\_accounts) | List of non-master accounts in the organization |
 | <a name="output_organization_arn"></a> [organization\_arn](#output\_organization\_arn) | The ARN of the organization |
+| <a name="output_organization_enabled_features"></a> [organization\_enabled\_features](#output\_organization\_enabled\_features) | List of enabled IAM organization features |
 | <a name="output_organization_id"></a> [organization\_id](#output\_organization\_id) | The ID of the organization |
 | <a name="output_organization_root_id"></a> [organization\_root\_id](#output\_organization\_root\_id) | The ID of the organization root |
 | <a name="output_roots"></a> [roots](#output\_roots) | List of organization roots |
