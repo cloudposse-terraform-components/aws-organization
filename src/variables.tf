@@ -25,3 +25,17 @@ variable "feature_set" {
     error_message = "feature_set must be one of: ALL, CONSOLIDATED_BILLING"
   }
 }
+
+variable "organization_enabled_features" {
+  type        = list(string)
+  description = "List of IAM features to enable. Valid values are 'RootCredentialsManagement' and 'RootSessions'. Set to empty list to disable."
+  default     = []
+
+  validation {
+    condition = alltrue([
+      for feature in var.organization_enabled_features :
+      contains(["RootCredentialsManagement", "RootSessions"], feature)
+    ])
+    error_message = "Valid values for organization_enabled_features are 'RootCredentialsManagement' and 'RootSessions'."
+  }
+}

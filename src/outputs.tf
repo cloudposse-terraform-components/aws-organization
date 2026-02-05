@@ -37,3 +37,8 @@ output "roots" {
   value       = try(aws_organizations_organization.this[0].roots, [])
   description = "List of organization roots"
 }
+
+output "organization_enabled_features" {
+  value       = try(aws_iam_organizations_features.this[0].enabled_features, [])
+  description = "List of enabled IAM organization features"
+}
